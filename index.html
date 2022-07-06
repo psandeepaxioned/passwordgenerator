@@ -1,10 +1,10 @@
 <!doctype html>
 <!-- If multi-language site, reconsider usage of html lang declaration here. -->
-<html lang="en"> 
+<html lang="en">
 
 <head>
   <meta charset="utf-8">
-  <title>Client</title>
+  <title>Password Generator</title>
   <!-- View-port Basics: http://mzl.la/VYREaP -->
   <!-- This meta tag is used for mobile device to display the page without any zooming,
        so how much the device is able to fit on the screen is what's shown initially. 
@@ -13,10 +13,10 @@
   <!-- Place favicon.ico in the root directory: mathiasbynens.be/notes/touch-icons -->
   <link rel="shortcut icon" href="favicon.ico" />
   <!--font-awesome link for icons-->
-  <link rel="stylesheet" media="screen" href="assets/vendor/font-awesome/css/all.min.css" >
+  <link rel="stylesheet" media="screen" href="assets/vendor/font-awesome/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <!-- Default style-sheet is for 'media' type screen (color computer display).  -->
-  <link rel="stylesheet" media="screen" href="assets/css/style.css" >
+  <link rel="stylesheet" media="screen" href="assets/css/style.css">
 </head>
 
 <body>
@@ -24,18 +24,53 @@
   <div class="container">
     <!--header section start-->
     <header>
-      
     </header>
     <!--header section start-->
     <!--main section start-->
     <main>
-
+      <section class="password">
+        <div class="wrapper">
+          <div class="content">
+            <h3>password generator</h3>
+            <div class="display-password">
+              <p class="generated-password">0</p>
+              <span class="icon">icon</span>
+            </div>
+            <div class="options">
+              <ul>
+                <li>
+                  <label for="length">password length</label>
+                  <input type="number" id="length" min="4" max="20" value="20">
+                </li>
+                <li>
+                  <label for="uppercase">include uppercase letters</label>
+                  <input type="checkbox" id="uppercase" checked>
+                </li>
+                <li>
+                  <label for="lowercase">include lowercase letters</label>
+                  <input type="checkbox" id="lowercase" checked>
+                </li>
+                <li>
+                  <label for="numbers">include numbers</label>
+                  <input type="checkbox" id="numbers" checked>
+                </li>
+                <li>
+                  <label for="symbols">include symbols</label>
+                  <input type="checkbox" id="symbols" checked>
+                </li>
+              </ul>
+            </div>
+            <div class="generate-password">
+              <a href="#FIXME" title="Generate Password">generate password</a>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
     <!--main section end-->
 
     <!--footer section start-->
-    <footer>      
-
+    <footer>
     </footer>
     <!--footer section end-->
 
@@ -43,4 +78,5 @@
   <!--container end-->
   <script src="assets/js/script.js"></script>
 </body>
+
 </html>
