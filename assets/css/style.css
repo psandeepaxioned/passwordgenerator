@@ -113,25 +113,20 @@ li {
   main styling starts here
 =================================*/
 .wrapper {
-  width: 137%;
-  padding: 0 10%;
+  width: 24%;
+  padding: 30px 1.5% 20px;
+  box-shadow: 0 0 1px #e0e0e0;
+  position: absolute;
+  top: 50%;
+  background-color: #23235b;
+  color: #fff;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 body, .container, main {  
   height: 100vh;
   background-color: #3b3c98;
-}
-
-section.password {
-  padding: 21px 9.5% 20px 0;
-  background-color: #23235b;
-  color: #fff;
-}
-
-main {
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 h3 {
