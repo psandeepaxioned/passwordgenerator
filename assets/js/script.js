@@ -1,7 +1,7 @@
 /* Author: 
 
 */
-const generatedPassword = document.querySelector(".generated-password");
+var generatedPassword = document.querySelector(".generated-password");
 const copy = document.querySelector(".icon");
 const length = document.querySelector(".length");
 const lowercase = document.querySelector(".lowercase");
@@ -20,20 +20,20 @@ const randomFunc = {
 };
 
 submit.addEventListener("click", () => {
-  const lengthValue = +length.value;
+  var lengthValue = +length.value;
   const uppercaseValue = uppercase.checked;
   const lowercaseValue = lowercase.checked;
   const numberValue = number.checked;
   const symbolsValue = symbols.checked;
 
   generatedPassword.innerText = generatePassword(
-    length,
+    lengthValue,
     uppercaseValue,
     lowercaseValue,
     numberValue,
     symbolsValue
   );
-});
+  });
 
 copy.addEventListener('click',() => {
   const textarea = document.createElement('textarea');
@@ -50,24 +50,26 @@ copy.addEventListener('click',() => {
   alert('Password copied to clipboard')
 })
 
-function generatePassword(length,upper,lower,number,symbols){
+function generatePassword(length,upper,lower,number,symbol){
   
-  const types = upper + lower + number + symbols;
-  const typesarr = [{upper},{lower},{number},{symbols}].filter(item => Object.values(item)[0]);
+  let generatedPassword = '';
+  
+  const types = upper + lower + number + symbol;
+  const typesarr = [{upper},{lower},{number},{symbol}].filter(item => Object.values(item)[0]);
 
   if(types === 0){
     return '';
   }
 
-  for(let i=0; i<length;i+=types){
+  for(let i = 0; i < length;i += types){
     typesarr.forEach(type => {
       const funcName = Object.keys(type)[0];
-
       generatedPassword += randomFunc[funcName]();
     });
   }
   const finalPassword = generatedPassword.slice(0,length);
   
+  console.log(finalPassword);
   return finalPassword;
 }
 
